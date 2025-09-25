@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f9f9f9;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    #countBox {
+      margin: 15px 0;
+      padding: 10px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+      width: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .reset {
+      background: #dc3545;
+    }
+    .reset:hover {
+      background: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Simple Counter</h2>
+    <div id="countBox">0</div>
+    <button onclick="increaseCount()">Count</button>
+    <button class="reset" onclick="resetCount()">Reset</button>
+  </div>
+
+  <script>
+    let count = 0;
+    function increaseCount() {
+      count++;
+      document.getElementById("countBox").innerText = count;
+    }
+    function resetCount() {
+      count = 0;
+      document.getElementById("countBox").innerText = count;
+    }
+
+    
+  </script>
+</body>
+</html>

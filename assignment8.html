@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Maker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .resume {
+      width: 300px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+    .resume img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .resume h1 {
+      font-size: 20px;
+      margin: 5px 0;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, button {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="resume">
+      <img id="image" src="image.png" alt="Profile Image">
+      <h1 id="name">Your Name</h1>
+      <p><b>Education:</b> <span id="class">B.Tech</span></p>
+      <p><b>Skills:</b></p>
+      <ul id="skillsList"></ul>
+      <p><b>Address:</b> <span id="address"></span></p>
+    </div>
+
+    
+    <div class="form">
+      <input type="text" id="inputName" placeholder="Enter Name">
+      <input type="text" id="inputClass" placeholder="Enter Class (e.g. B.Tech)">
+      <input type="text" id="inputSkill" placeholder="Enter Skill (comma separated)">
+      <textarea id="inputAddress" placeholder="Enter Address"></textarea>
+      <button onclick="generateResume()">Generate Resume</button>
+    </div>
+  </div>
+
+  <script>
+    function generateResume() {
+      document.getElementById("name").innerText = document.getElementById("inputName").value;
+      document.getElementById("class").innerText = document.getElementById("inputClass").value;
+
+      
+      let skills = document.getElementById("inputSkill").value.split(",");
+      let skillList = document.getElementById("skillsList");
+      skillList.innerHTML = "";
+      skills.forEach(skill => {
+        if(skill.trim() !== "") {
+          let li = document.createElement("li");
+          li.innerText = skill.trim();
+          skillList.appendChild(li);
+        }
+      });
+
+      document.getElementById("address").innerText = document.getElementById("inputAddress").value;
+    }
+  </script>
+
+</body>
+</html>
+
