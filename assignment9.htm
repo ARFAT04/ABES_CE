@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do List - Single Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .section {
+      display: none;
+      margin-top: 20px;
+    }
+    .container {
+      border: 2px solid #333;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f9f9f9;
+      max-width: 400px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .container:hover {
+      transform: scale(1.03);
+      background: #eef;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: blue;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>To Do List</h2>
+
+  <div class="container" onclick="showSection('marksheet')">
+    <h3>📄 Go to Marksheet</h3>
+    <p>Click here to open the marksheet section.</p>
+  </div>
+
+  <div class="container" onclick="showSection('college')">
+    <h3>🏫 Go to College Section</h3>
+    <p>Click here to open the college section.</p>
+  </div>
+
+  <div class="container" onclick="showSection('list')">
+    <h3>📋 List of All</h3>
+    <p>Click here to view all options.</p>
+  </div>
+
+  <div id="marksheet" class="section">
+    <div class="container">
+      <h3>Marksheet Page</h3>
+      <p>Here you can see your marksheet.</p>
+      <a href="#" onclick="showSection('home')">⬅ Back to Home</a>
+    </div>
+  </div>
+
+  
+  <div id="college" class="section">
+    <div class="container">
+      <h3>College Section</h3>
+      <p>Welcome to the College Section page.</p>
+      <a href="#" onclick="showSection('home')">⬅ Back to Home</a>
+    </div>
+  </div>
+
+ 
+  <div id="list" class="section">
+    <div class="container">
+      <h3>List of All Options</h3>
+      <ul>
+        <li><a href="#" onclick="showSection('marksheet')">Go to Marksheet</a></li>
+        <li><a href="#" onclick="showSection('college')">Go to College Section</a></li>
+      </ul>
+      <a href="#" onclick="showSection('home')">⬅ Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    function showSection(section) {
+      
+      document.querySelectorAll('.section').forEach(div => div.style.display = 'none');
+
+      if (section === 'home') {
+        document.querySelectorAll('body > .container').forEach(div => div.style.display = 'block');
+        return;
+      }
+
+    s
+      document.querySelectorAll('body > .container').forEach(div => div.style.display = 'none');
+
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
