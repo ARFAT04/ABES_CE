@@ -1,0 +1,87 @@
+/* Center entire app on the page */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #dde3e6, #197fe5);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main container */
+.weather-container {
+  width: 350px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+}
+
+/* Title */
+.weather-container h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Input */
+.weather-container input {
+  width: 90%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 16px;
+}
+
+/* Button */
+.weather-container button {
+  margin-top: 12px;
+  padding: 12px 25px;
+  background: #3883a8;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.weather-container button:hover {
+  background: #003580;
+}
+
+/* Weather Result Box */
+.weather-box {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Error message */
+.error {
+  margin-top: 10px;
+  color: #ffdddd;
+  font-weight: bold;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
